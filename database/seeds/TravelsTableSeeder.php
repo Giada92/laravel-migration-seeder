@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Travel;
 
 class TravelsTableSeeder extends Seeder
 {
@@ -10,7 +11,11 @@ class TravelsTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        //
+    {   
+        $prova = config('travel');
+        dd($prova);
+        /* $travel = Travel::all();
+        dd($travel); */
+
     }
 }
