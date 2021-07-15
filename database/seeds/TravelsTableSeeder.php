@@ -12,10 +12,20 @@ class TravelsTableSeeder extends Seeder
      */
     public function run()
     {   
-        $prova = config('travel');
-        dd($prova);
-        /* $travel = Travel::all();
-        dd($travel); */
+        $arrayTravels = config('travel');
+        /* $travel = Travel::all(); */
+        
 
+        foreach($arrayTravels as $travel){
+            $newTravel = new Travel();
+            $newTravel->destination = $travel['destination'];
+            $newTravel->period = $travel['period'];
+            $newTravel->n_people = $travel['n_people'];
+            $newTravel->price = $travel['price'];
+            $newTravel->description = $travel['description'];
+            $newTravel->is_avelable = $travel['is_avelable'];
+            $newTravel->save();
+            
+        }
     }
 }
