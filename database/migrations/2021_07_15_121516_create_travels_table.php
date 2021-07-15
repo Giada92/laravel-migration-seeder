@@ -15,6 +15,12 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
+            $table->string('destination', 100);
+            $table->string('period', 50); //15/07/2021 - 20/07/2021
+            $table->unsignedTinyInteger('n_people'); //numero massimo di partecipanti
+            $table->float('price', 8, 2);
+            $table->mediumText('description'); //itinerary
+            $table->boolean('is_avelable'); //se ancora è possibile partecipare 
             $table->timestamps();
         });
     }
